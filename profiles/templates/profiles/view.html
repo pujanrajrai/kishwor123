@@ -1,0 +1,319 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile_view.css' %}">{% endblock %}
+
+{#{% block script %}#}
+{#{% endblock %}#}
+
+{% block title %}- Profile View {% endblock %}
+
+{% block content %}
+    <style>
+        .profile-head {
+            transform: translateY(2rem)
+        }
+
+        .container {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .row {
+            margin-right: 2px !important;
+            margin-inline: auto;
+        }
+
+        p {
+            color: black;
+        }
+
+        .pb-4, .py-4 {
+            padding-bottom: 3.5rem !important;
+        }
+
+        .cover {
+            background-image: url("/static/profiles/images/cover.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        body {
+            background: linear-gradient(to right, #b74b2a, #cf9e47);
+            background-size: cover;
+
+        }
+
+
+        @media (min-width: 768px) {
+            .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 1 0 13.666667%;
+                max-width: 110.666667%;
+            }
+        }
+
+        section > div {
+            margin: 1em;
+            padding: 20px 0;
+        }
+
+        .pl-5, .px-5 {
+            padding-left: 3rem !important;
+            margin: -28px;
+        }
+    </style>
+
+    <div class="container">
+        <div class="row py-3 ">
+            <div class="col-md-5 ">
+                <!-- Profile widget -->
+                <div class="bg-white shadow rounded overflow-hidden">
+                    <div class="px-4 pt-0 pb-4 cover" style="background-color: black">
+                        <div class="media align-items-end profile-head">
+                            <div class="profile mr-3"><img src="{{ profiles.profile_image.url }}" alt="image"
+                                                           width="130" class="rounded mb-2 img-thumbnail"><a href="#"
+                                                                                                             class="btn btn-outline-light btn-sm btn-block">Edit
+                                profile</a></div>
+                            <div class="media-body mb-5 text-white">
+                                <h4 class="mt-0 mb-0">{{ profiles.first_name }} {{ profiles.last_name }}</h4>
+                                <p class="small mb-4" style="color: white"><i
+                                        class="fas fa-map-marker-alt mr-2"></i>{{ profiles.temp_address }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-light p-4 d-flex justify-content-end text-center">
+                        <p><i class="fa fa-money" aria-hidden="true"></i> 1000</p>
+                    </div>
+                    <div class="px-4 py-3">
+                        <div class="p-4 rounded shadow-sm bg-light">
+                            <p class="font-italic mb-0">Add Vehicle For Rent</p>
+                            <br>
+                            <div class="box">
+                                <div class="box-header with-border">
+                                    <button id="btnAdd_Dept" type="button" data-toggle="modal" class="btn btn-primary"
+                                            data-target="#exampleModal"><i
+                                            class="fa fa-plus"></i> Add
+                                    </button>
+                                </div>
+                            </div>
+                            <br>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content bg-dark">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel" style="color: orange">Add
+                                                Vehicle</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {#                                            <form action="">#}
+                                            {#                                                <div class="row pad-l-15 pad-r-15">#}
+                                            {#                                                    <div class="col-md-6 ">#}
+                                            {#                                                        <div class="form-group">#}
+                                            {#                                                            <label for="vehicleName">Vehicle Name</label>#}
+                                            {#                                                            <input type="text" class="form-control" id="vehicleName"#}
+                                            {#                                                                   name="vehicle_name"#}
+                                            {#                                                                   required>#}
+                                            {#                                                        </div>#}
+                                            {#                                                    </div>#}
+                                            {#                                                    <div class="col-md-6 ">#}
+                                            {#                                                        <div class="form-group">#}
+                                            {#                                                            <label for="VehicleType">Vehicle Type</label>#}
+                                            {#                                                            <select class="custom-select" id="inputGroupSelect04"#}
+                                            {#                                                                    name="vehicle_type">#}
+                                            {#                                                                <option selected></option>#}
+                                            {#                                                                <option value="1">Bike</option>#}
+                                            {#                                                                <option value="2">Car</option>#}
+                                            {#                                                            </select>#}
+                                            {#                                                        </div>#}
+                                            {#                                                    </div>#}
+                                            {#                                                </div>#}
+                                            {##}
+                                            {#                                                <div class="row pad-l-15 pad-r-15">#}
+                                            {#                                                    <div class="col-md-6 ">#}
+                                            {#                                                        <div class="form-group">#}
+                                            {#                                                            <label for="vehicleNumber">Vehicle Number</label>#}
+                                            {#                                                            <input type="text" class="form-control" id="vehicleNumber"#}
+                                            {#                                                                   name="vehicle_number"#}
+                                            {#                                                                   required>#}
+                                            {#                                                        </div>#}
+                                            {#                                                    </div>#}
+                                            {#                                                    <div class="col-md-6 ">#}
+                                            {#                                                        <div class="form-group">#}
+                                            {#                                                            <label for="killometerdriven">Killometer Driven</label>#}
+                                            {#                                                            <input type="text" class="form-control"#}
+                                            {#                                                                   id="killometerdriven" name="killometer_driven"#}
+                                            {#                                                                   required>#}
+                                            {#                                                        </div>#}
+                                            {#                                                    </div>#}
+                                            {#                                                </div>#}
+                                            {##}
+                                            {#                                                <div class="row pad-l-15 pad-r-15">#}
+                                            {#                                                    <div class="col-md-6 ">#}
+                                            {#                                                        <div class="form-group">#}
+                                            {#                                                            <label for="seat">Seat</label>#}
+                                            {#                                                            <input type="text" class="form-control" id="seat"#}
+                                            {#                                                                   name="seat"#}
+                                            {#                                                                   required>#}
+                                            {#                                                        </div>#}
+                                            {#                                                    </div>#}
+                                            {#                                                    <div class="col-md-6 ">#}
+                                            {#                                                        <div class="form-group ">#}
+                                            {#                                                            <label for="transmission">Transmission</label>#}
+                                            {#                                                            <select class="custom-select" id="inputGroupSelect05"#}
+                                            {#                                                                    name="transmission">#}
+                                            {#                                                                <option selected></option>#}
+                                            {#                                                                <option value="1">Automatic</option>#}
+                                            {#                                                                <option value="2">Manual</option>#}
+                                            {#                                                            </select>#}
+                                            {#                                                        </div>#}
+                                            {#                                                    </div>#}
+                                            {#                                                </div>#}
+                                            {##}
+                                            {#                                                <div class="row pad-l-15 pad-r-15">#}
+                                            {#                                                    <div class="col-md-6 ">#}
+                                            {#                                                        <div class="form-group ">#}
+                                            {#                                                            <label for="vehicleage">Vehicle Age</label>#}
+                                            {#                                                            <input type="number" min="0" class="form-control"#}
+                                            {#                                                                   id="vehicleage" name="vehicle_price"#}
+                                            {#                                                                   required>#}
+                                            {#                                                        </div>#}
+                                            {#                                                    </div>#}
+                                            {#                                                    <div class="col-md-6 ">#}
+                                            {#                                                        <div class="form-group ">#}
+                                            {#                                                            <label for="vehicleprice">Vehicle Price</label>#}
+                                            {#                                                            <input type="text" class="form-control" id="vehicleprice"#}
+                                            {#                                                                   name="vehicle_price"#}
+                                            {#                                                                   required>#}
+                                            {#                                                        </div>#}
+                                            {#                                                    </div>#}
+                                            {#                                                </div>#}
+                                            {##}
+                                            {#                                                <div class="row pad-l-15 pad-r-15">#}
+                                            {#                                                    <div class="col-md-6 ">#}
+                                            {#                                                        <div class="form-group ">#}
+                                            {#                                                            <label for="carimage">Vehicle Image</label>#}
+                                            {#                                                            <input type="file" class="form-control-file" id="carimage"#}
+                                            {#                                                                   accept="image/*" name="car_image" required>#}
+                                            {##}
+                                            {#                                                        </div>#}
+                                            {#                                                    </div>#}
+                                            {#                                                </div>#}
+                                            {##}
+                                            {##}
+                                            {#                                            </form>#}
+                                            {{ errors }}
+                                            <form enctype="multipart/form-data" method="post"
+                                                  action="{% url 'vehicle:add_vehicle' %}">
+                                                {% csrf_token %}
+                                                name:<input type="text" name="name"><br>
+                                                number plate:<input type="text" name="number_plate"><br>
+                                                Vehicle Photo:<input type="file" name="vehicle" accept="image/*"><br>
+                                                km_driven:<input type="number" name="km_driven"><br>
+                                                price_per_day:<input type="number" name="price_per_day"><br>
+                                                wheeler:<input type="number" name="wheeler"><br>
+                                                seat:<input type="number" name="seat"><br>
+                                                transmission:<input type="text" name="transmission"><br>
+                                                type:
+                                                <select name="type">
+                                                    <option value="">Select Vehicle Type</option>
+
+                                                    {% for type in types %}
+                                                        <option value="{{ type.id }}">{{ type }}</option>
+                                                    {% endfor %}
+                                                </select><br>
+                                                details:<input type="text" name="details"><br>
+                                                <input type="submit" value="submit"><br>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                            </button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <table class="table table-hover">
+                                <thead>
+                                <tr style="color: black">
+                                    <th scope="col">Vehicle Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">IsBooked</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                                </thead>
+                                <tbody style="color: black">
+                                <tr>
+                                    {% for v in vehicle %}
+
+                                        <tr>
+                                            <th scope="row">{{ v.name }}</th>
+                                            <td>{{ v.price_per_day }}</td>
+                                            <td>{{ v.is_booked }}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tr>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="px-4 py-3">
+                        <div class="p-4 rounded shadow-sm bg-light">
+                            <p class="font-italic mb-0">Booked Vehicle</p>
+                            <br>
+
+                            <table class="table table-hover">
+                                <thead>
+
+                                <tr style="color: black">
+                                    <th scope="col">Vehicle Name</th>
+                                    <th scope="col">Booked Date</th>
+                                    <th scope="col">End Date</th>
+                                    <th scope="col">Booked By</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                                </thead>
+                                <tbody style="color: black">
+                                {% for b in booking %}
+                                <tr>
+                                    <th scope="row">{{ b.owner }}</th>
+                                    <td>{{ b.order_date}}</td>
+                                    <td>{{ b.order_expire_date }}</td>
+                                    <td>{{ b.buyer }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

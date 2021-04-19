@@ -1,0 +1,58 @@
+{% load static %}
+
+{{ errors }}
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    name:<input type="text" name="name"><br>
+    number plate:<input type="text" name="number_plate"><br>
+    Vehicle Photo:<input type="file" name="vehicle" accept="image/*"><br>
+    km_driven:<input type="number" name="km_driven"><br>
+    price_per_day:<input type="number" name="price_per_day"><br>
+    wheeler:<input type="number" name="wheeler"><br>
+    seat:<input type="number" name="seat"><br>
+    transmission:<input type="text" name="transmission"><br>
+    type:
+    <select name="type">
+            <option value="">Select Vehicle Type</option>
+
+        {% for type in types %}
+        <option value="{{ type.id }}">{{ type }}</option>
+        {% endfor %}
+    </select><br>
+    details:<input type="text" name="details"><br>
+    <input type="submit" value="submit"><br>
+</form>
+{#<form method="post">#}
+{#        {% csrf_token %}#}
+{##}
+{#    <input type="hidden" name="csrfmiddlewaretoken"#}
+{#           value="35I27Mu6jpqKX1U7ZYAfbVLoVKrG2sQBZQRZQZdGPpFc7HSsdqjmgdJNbAgVEEVE">#}
+{#    <p><label for="id_name">Name:</label> <input type="text" name="name" maxlength="100" required="" id="id_name"></p>#}
+{#    <p><label for="id_km_driven">Km driven:</label> <input type="number" name="km_driven" min="0" required=""#}
+{#                                                           id="id_km_driven"></p>#}
+{#    <p><label for="id_seat">Seat:</label> <input type="number" name="seat" min="0" required="" id="id_seat"></p>#}
+{#    <p><label for="id_price_per_day">Price per day:</label> <input type="text" name="price_per_day" maxlength="100"#}
+{#                                                                   required="" id="id_price_per_day"></p>#}
+{#    <p><label for="id_wheeler">Wheeler:</label> <input type="text" name="wheeler" maxlength="100" required=""#}
+{#                                                       id="id_wheeler"></p>#}
+{#    <p><label for="id_transmission">Transmission:</label> <input type="text" name="transmission" maxlength="100"#}
+{#                                                                 required="" id="id_transmission"></p>#}
+{#    <p><label for="id_type">Type:</label> <select name="type" required="" id="id_type">#}
+{#        <option value="" selected="">---------</option>#}
+{##}
+{#        <option value="1">car</option>#}
+{##}
+{#        <option value="2">bike</option>#}
+{##}
+{#    </select></p>#}
+{#    <p><label for="id_details">Details:</label> <input type="text" name="details" maxlength="100" required=""#}
+{#                                                       id="id_details"></p>#}
+{#    <p><label for="id_number_plate">Number plate:</label> <input type="text" name="number_plate" maxlength="20"#}
+{#                                                                 required="" id="id_number_plate"></p>#}
+{#    <p><label for="id_vehicle">Vehicle:</label> <input type="file" name="vehicle" accept="image/*" required=""#}
+{#                                                       id="id_vehicle"></p>#}
+{#</form>#}
+{#<form method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ forms.as_p }}#}
+{#</form>#}

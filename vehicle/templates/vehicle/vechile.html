@@ -1,0 +1,46 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'vehicle/css/vehicle_custom.css' %}">{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block title %}- Login {% endblock %}
+
+{% block content %}
+
+
+    <section class="section" id="trainers">
+        <div class="container">
+            <br>
+            <br>
+            <div class="row">
+                {% for vehicle in vehicles %}
+                    <div class="col-lg-4 col-md-4">
+                        <div class="trainer-item">
+                            <div class="image-thumb">
+                                <img src="{{ vehicle.vehicle.url }}" alt="" width="300px" height="170px">
+                            </div>
+                            <div class="down-content">
+                                <span>Price Per Day <sup>Rs.</sup>{{ vehicle.price_per_day }}</span>
+                                <h4>{{ vehicle.name }}</h4>
+                                <p>
+                                    <i class="fa fa-user" title="passegengers"></i> {{ vehicle.seat }} &nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-sign-out" title="doors"></i> {{ vehicle.wheeler }} &nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-cog" title="transmission"></i> {{ vehicle.transmission }}
+                                </p>
+                                <ul class="social-icons">
+                                    <li><a href="{% url 'vehicle:vehicle_details'  vehicle.id %}">+ View Detials</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}

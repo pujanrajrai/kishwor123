@@ -1,0 +1,49 @@
+img {
+    width: 28em;
+    height: 33em;
+}
+/*body > div > section > div > div > div:nth-child(2){*/
+/*    position: relative;*/
+/*}*/
+
+section{
+    padding: 3rem 0;
+}
+h3{
+    color: orange;
+
+}
+.form-control {
+    display: block;
+    width: 25em;
+}
+
+.container{
+    margin-inline: auto;
+    width: min(90%, 70.5rem);
+}
+
+.split{
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width: 58em){
+    .split{
+        flex-direction: row;
+    }
+    body > div > section > div > div > div:nth-child(2) > div > form > div:nth-child(4) > div > span{
+        padding-right: 2em;
+    }
+
+    .split > * {
+        flex-basis: 100%;
+    }
+
+    .split > * + *{
+        margin-left: 4em;
+    }
+}
+
+
+

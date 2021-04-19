@@ -1,0 +1,55 @@
+
+
+{% extends "home/base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'vehicle/css/overview_custom.css' %}">{% endblock %}
+{% block script %}
+{% endblock %}
+
+{% block title %}- OverView {% endblock %}
+
+{% block content %}
+
+    <div class="wrapper">
+        <div class="container">
+
+            <section>
+                <div class="jumbotron">
+                    <div class="container">
+                        <h2> {{ vehicle.name }} </h2>
+
+                        <div class="split">
+                            <div>
+
+                                <img src="{{ vehicle.vehicle.url }}" alt="" height="370" width="500">
+
+                            </div>
+                            <div>
+                                <ul>Name: {{ vehicle.name }}</ul>
+                                <ul>number plate:{{ vehicle.number_plate }}</ul>
+                                <ul>km driven: {{ vehicle.km_driven }}</ul>
+                                <ul>vehicle seat: {{ vehicle.seat }}</ul>
+                                <ul>price per day: {{ vehicle.price_per_day }}</ul>
+                                <ul> wheeler: {{ vehicle.wheeler }}</ul>
+                                <ul>transmission {{ vehicle.transmission }}</ul>
+                                <ul>details: {{ vehicle.details }}</ul>
+                                <form method="post" action="{% url 'vehicle:vehicle_book' id %}">
+                                    {% csrf_token %}
+
+
+                                    <ul>from date:<input type="date" name="order_date" required></ul>
+                                    <ul>end date:<input type="date" name="order_expire_date" required></ul>
+                                    <ul><input type="submit" class="btn btn-primary" value="Book Now"></ul>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+
+{% endblock %}

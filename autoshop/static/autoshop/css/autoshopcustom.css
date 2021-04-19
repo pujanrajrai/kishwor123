@@ -1,0 +1,32 @@
+
+.card{
+  transition: transform .2s;
+
+}
+
+.card:hover {
+    cursor: pointer;
+  transform: scale(1.04);
+}
+
+section{
+    position: relative;
+    top: 50px;
+    min-height: 2vh;
+    padding: 20px 50px;
+}
+.card-footer a {
+    font: bold;
+text-decoration: none;
+}
+
+@media (max-width: 991px) {
+.one{
+    top: -70px !important;
+}
+
+    .two{
+        top: -140px ! important;
+    }
+
+}

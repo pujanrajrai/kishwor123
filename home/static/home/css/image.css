@@ -1,0 +1,21 @@
+img{
+    height: 625px !important;
+}
+
+
+.carousel-caption {
+           bottom: 29em !important;
+        right: 63em;
+}
+
+
+@media (max-width: 990px) {
+img{
+    height: 530px !important;
+}
+    .carousel-caption {
+    margin: auto;
+    bottom: 23em !important;
+    right: 44em;
+}
+}

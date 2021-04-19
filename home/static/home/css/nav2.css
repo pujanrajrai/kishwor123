@@ -1,0 +1,21 @@
+#navbarColor02 > ul > li.nav-item.dropdown.show > div{
+    text-align: center;
+    left: -2px;
+}
+
+
+#navbarColor02 > ul > li:nth-child(6) > div {
+    left: -46px !important;
+    padding-left: 2px;
+
+}
+#navbarColor02 > ul > li:nth-child(6) > a{
+        margin-left: 18px !important;
+}
+
+a {margin-right: 20px;}
+
+
+i {
+   padding-right: 6px;
+}

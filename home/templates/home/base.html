@@ -1,0 +1,124 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/_bootswatch.scss' %}">
+    <link rel="stylesheet" href="{% static 'home/css/_variables.scss' %}">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
+    <link rel="stylesheet" href="{% static 'home/css/nav.css' %} ">
+
+    {% block head %}{% endblock %}
+
+    <title>Rental System {% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}" style="color: orange">Rental System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse w-100 order-3 dual-collapse2" id="navbarColor02">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <form method="get" action="{% url 'search' %}">
+                    <input type="text" name="search">
+                    <input type="submit" value="Search">
+                </form>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link mx-3" href="{% url 'home' %}"><i class="fa fa-home"></i>&nbsp;Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mx-3" data-toggle="dropdown" href="#" role="button"
+                   aria-haspopup="true" aria-expanded="false"><i class="fas fa-compact-disc"> </i>&nbsp;Vehicle</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'vehicle:bike_view' %}"><i class="fa fa-motorcycle"></i>&nbsp;Bike</a>
+                    <a class="dropdown-item" href="{% url 'vehicle:car_view' %}"><i class='fas fa-car-side'></i>&nbsp;Car</a>
+                </div>
+            </li>
+
+
+            <li class="nav-item mx-3">
+                <a class="nav-link" href="{% url 'travel' %}"><i class="fas fa-atlas"></i>&nbsp;Travel</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link" href="{% url 'autoshop' %}"><i class="fas fa-tools"></i>&nbsp;Auto-Shop</a>
+            </li>
+            <li class="nav-item mx-3">
+                <a class="nav-link" href="{% url 'contact' %}"><i class="fa fa-envelope"></i>&nbsp;Contact Us</a>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false"><i class="fas fa-user"></i>&nbsp;Me </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'profiles:view' %}"><i class="fa fa-user-circle"></i>&nbsp;View
+                            Profile</a>
+                        <a class="dropdown-item" href="{% url 'accounts:logout' %}"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                    </div>
+                </li>
+            {% else %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false"><i class="fas fa-user"></i>&nbsp;Sign Up</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'accounts:register' %}"><i class="fa fa-user-plus"></i>&nbsp;Register</a>
+                        <a class="dropdown-item" href="{% url 'accounts:login' %}"><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
+                    </div>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
+{% block content %}
+
+
+{% endblock %}
+
+
+<script src="{% static 'home/js/jquery.min.js' %}"></script>
+<script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'home/js/popper.min.js' %}"></script>
+
+<script src="{% static 'home/js/custom.js' %}"></script>
+{% block script %}{% endblock %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

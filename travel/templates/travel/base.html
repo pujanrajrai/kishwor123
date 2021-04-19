@@ -1,0 +1,173 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'travel/css/travelcustom.css' %}">
+{% endblock %}
+
+{% block title %}-Travel {% endblock %}
+
+{% block script %}
+    <script src="{% static 'travel/js/custom.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <section>
+        <div class="container">
+            <div class="card-deck">
+                    <div class="card">
+
+                        <img class="card-img-top" src="{% static 'travel/images/main/annapurna.jpg' %}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">ANNAPURNA Circuit</h5>
+                            <p class="card-text">Annapurna, Nepali Annapurna Himal, massif of the Himalayas in
+                                north-central Nepal. It forms a ridge some 30 miles (48 km) long between the gorges of
+                                the Kali (Kali Gandak; west) and Marsyandi (east) rivers north of the town of
+                                Pokhara....</p>
+                        </div>
+                <div class="card-footer d-flex justify-content-between">
+                   <a href="https://goo.gl/maps/87C9e7Di6dR8whL89" target="_blank"> MAP&nbsp;&nbsp;<i
+                        class="fas fa-map-marked-alt"></i> </a>
+                    <a href="{% url 'annapurna' %}" class="btn btn-danger">Read More</a>
+                </div>
+            </div>
+                     <div class="card">
+
+                <img class="card-img-top" src="{% static 'travel/images/main/chitwan.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">CHITWAN NATIONAL PARK</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                        content.</p>
+                </div>
+
+                <div class="card-footer d-flex justify-content-between">
+                    <a href="https://goo.gl/maps/QsCui6hhVHZyRTZG7" target="_blank">MAP&nbsp;&nbsp;  <i
+                        class="fas fa-map-marked-alt"></i>  </a>
+                    <a href="{% url 'annapurna' %}" class="btn btn-danger">Read More</a>
+                </div>
+            </div>
+                    <div class="card">
+
+                <img class="card-img-top" src="{% static 'travel/images/main/Everest.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">MOUNT EVEREST</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+
+                <div class="card-footer d-flex justify-content-between">
+                     <a href="https://goo.gl/maps/kKE625urSCDMh2p69" target="_blank">MAP&nbsp;&nbsp; <i
+                        class="fas fa-map-marked-alt"></i> </a>
+                    <a href="{% url 'annapurna' %}" class="btn btn-danger">Read More</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <br><br>
+
+    <section class="one">
+        <div class="container">
+            <div class="card-deck">
+                <div class="card">
+
+                    <img class="card-img-top" src="{% static 'travel/images/main/langtang.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">LANGTANG NATIONAL PARK</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                       <a href="https://goo.gl/maps/f6hgL8kJubRnepsJA" target="_blank">MAP&nbsp;&nbsp; <i
+                            class="fas fa-map-marked-alt"></i> </a>
+                        <a href="{% url 'annapurna' %}" class="btn btn-danger">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <img class="card-img-top" src="{% static 'travel/images/main/lumbini.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">LUMBINI</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="https://goo.gl/maps/pZEWNnKkkFbDuLjw9" target="_blank"> MAP&nbsp;&nbsp;<i
+                            class="fas fa-map-marked-alt"></i>  </a>
+                        <a href="{% url 'annapurna' %}" class="btn btn-danger">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <img class="card-img-top" src="{% static 'travel/images/main/muktinath.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">MUKTINATH TEMPLE</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="https://goo.gl/maps/zNN5V73LmCV95rBG8" target="_blank"> MAP&nbsp;&nbsp;<i
+                            class="fas fa-map-marked-alt"></i></a>
+                        <a href="{% url 'annapurna' %}" class="btn btn-danger">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+
+    <section class="two">
+        <div class="container">
+            <div class="card-deck">
+                <div class="card">
+
+                    <img class="card-img-top" src="{% static 'travel/images/main/rara.jpeg' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">RARA NATIONAL PARK </h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="https://goo.gl/maps/N8cVueYgw6dmKVGZ6" target="_blank">MAP&nbsp;&nbsp; <i
+                            class="fas fa-map-marked-alt"></i> </a>
+                        <a href="{% url 'annapurna' %}" class="btn btn-danger">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <img class="card-img-top" src="{% static 'travel/images/main/tilicho.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">TILICHO LAKE</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                      <a href="https://goo.gl/maps/sq6Nu8grTiuQU9Yx9" target="_blank">MAP&nbsp;&nbsp; <i
+                            class="fas fa-map-marked-alt"></i> </a>
+                        <a href="{% url 'annapurna' %}" class="btn btn-danger">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <img class="card-img-top" src="{% static 'travel/images/main/gosaikunda.jpg' %}" alt="Card image cap">
+                    <div class="card-body ">
+                        <h5 class="card-title">GOSAIKUNDA LAKE</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+
+                    </div>
+
+                    <div class="card-footer d-flex justify-content-between">
+                       <a href="https://goo.gl/maps/oUiipS36Cg6iw7jh8" target="_blank">MAP&nbsp;&nbsp; <i
+                            class="fas fa-map-marked-alt"></i> </a>
+                         <a href="{% url 'annapurna' %}" class="btn btn-danger">Read More</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+

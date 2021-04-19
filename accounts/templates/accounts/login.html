@@ -1,0 +1,65 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'accounts/css/accountcustom.css' %}">{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block title %}- Login {% endblock %}
+
+{% block content %}
+
+    <div class="wrapper">
+        <section>
+            <div class="container">
+                <div class="split">
+                <div>
+                     <img src="{% static 'accounts/images/bg1.jpg' %}" alt="image">
+                </div>
+                <div>
+                    <div class="col-md-12">
+                        <h3>Login to <strong>Rental System</strong></h3> <br>
+                        <form action="{% url 'accounts:login' %}" method="post">
+                            {% csrf_token %}
+
+
+                            <div class="form-group row">
+                                <div class="form-group w-75 ">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="text" class="form-control col-xs-4 " id="exampleInputEmail1"
+                                           aria-describedby="emailHelp" placeholder="UserName or Email" name="email"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="form-group w-75 ">
+                                    <label for="exampleInputEmail1">Password</label>
+                                    <input type="password" class="form-control col-xs-4 " id="exampleInputEmail1"
+                                           aria-describedby="emailHelp" placeholder="Password" name="password" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Remember Me</label>
+
+                                    <span style="padding-left:9em" class=""><a href="#" class="forgot-pass">Forgot Password</a></span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div></div>
+        </section>
+    </div>
+
+{% endblock %}
